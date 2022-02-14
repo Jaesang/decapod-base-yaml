@@ -2,6 +2,23 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   labels:
+    name: prometheus-operator-crds
+  name: prometheus-operator-crds
+spec:
+  chart:
+    name: kube-prometheus-stack
+    repository: https://prometheus-community.github.io/helm-charts
+    type: helmrepo
+    version: 21.0.3
+  helmVersion: v3
+  releaseName: prometheus-operator-crds
+  targetNamespace: lma
+  values: {}
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  labels:
     name: prometheus-operator
   name: prometheus-operator
 spec:

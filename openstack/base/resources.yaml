@@ -499,15 +499,9 @@ spec:
           ml2:
             mechanism_drivers: onos_ml2
             tenant_network_types: vxlan
-            type_drivers: flat, vlan, vxlan
+            type_drivers: flat, vxlan
           ml2_type_flat:
             flat_networks: '*'
-          ml2_type_vlan:
-            network_vlan_ranges: ""
-          onos:
-            password: rocks
-            url_path: http://sona-onos:8181/onos/openstacknetworking
-            username: onos
         openvswitch_agent:
           ovs:
             bridge_mappings: ""
@@ -573,10 +567,6 @@ spec:
       daemonset_sriov_agent: false
     network:
       backend: [] # TO_BE_FIXED
-      server:
-        node_port:
-          enabled: true
-          port: 30096
       share_namespaces: false
     pod:
       replicas:
